@@ -6,6 +6,7 @@ import {
   TRTCParams,
   TRTCCloudCallback,
   TRTCAppScene,
+  TRTCRoleType,
   TRTCAudioQuality
 } from '@tencentcloud/liteavsdk_trtc';
 import genTestUserSig from '../../../debug/gen-test-user-sig';
@@ -105,7 +106,7 @@ struct AudioCallingView {
       info.userSig,
       Number(this.roomId),
       '',
-      0
+      TRTCRoleType.TRTCRoleAnchor
     );
     this.trtc.enterRoom(params, TRTCAppScene.TRTCAppSceneAudioCall);
     this.trtc.startLocalAudio(TRTCAudioQuality.TRTCAudioQualitySpeech);

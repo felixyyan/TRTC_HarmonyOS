@@ -19,7 +19,7 @@ import { BackgroundRunningHelper } from '../../../common/BackgroundRunningHelper
 struct SetBGMView {
   // 默认 BGM 地址（腾讯云官方示例音频）
   private static readonly DEFAULT_BGM_URL: string =
-    'https://imgcache.qq.com/operation/dianshi/other/daoxiang.72c46ee085f15dc72603b0ba154409879cbeb15e.mp3';
+    '填写BGM 地址，可以是URL 链接';
 
   @State userId: string = generateUserId();
   @State roomId: string = '20260424';
