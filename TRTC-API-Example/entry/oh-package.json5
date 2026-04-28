@@ -1,0 +1,11 @@
+{
+  "name": "entry",
+  "version": "1.0.0",
+  "description": "Please describe the basic information.",
+  "main": "",
+  "author": "",
+  "license": "",
+  "dependencies": {
+    "@tencentcloud/liteavsdk_trtc": "file:libs/LiteAVSDK_TRTC_13.2.0.8732.har"
+  }
+}

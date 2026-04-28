@@ -1,0 +1,71 @@
+{
+  "apiType": "stageMode",
+  "buildOption": {
+  },
+  "buildOptionSet": [
+    {
+      "name": "release",
+      "arkOptions": {
+        "obfuscation": {
+          "ruleOptions": {
+            "enable": true,
+            "files": [
+              "./obfuscation-rules.txt"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "debug",
+    },
+  ],
+  "targets": [
+    {
+      "name": "default",
+      "resource": {
+        "directories": [
+          "./src/main/resources/common",
+          "./src/main/resources/default"
+        ]
+      },
+      "source": {
+        "sourceRoots": [
+          "./src/main",
+        ],
+        "pages": [
+          "pages/MainEntryView",
+          "pages/Basic/AudioCall/AudioCallingEnterView",
+          "pages/Basic/AudioCall/AudioCallingView",
+          "pages/Basic/VideoCall/VideoCallingEnterView",
+          "pages/Basic/VideoCall/VideoCallingView",
+          "pages/Basic/Live/LiveEnterView",
+          "pages/Basic/Live/LiveAnchorView",
+          "pages/Basic/Live/LiveAudienceView",
+          "pages/Basic/VoiceChatRoom/VoiceChatRoomEnterView",
+          "pages/Basic/VoiceChatRoom/VoiceChatRoomAnchorView",
+          "pages/Basic/VoiceChatRoom/VoiceChatRoomAudienceView",
+          "pages/Basic/ScreenShare/ScreenShareEnterView",
+          "pages/Basic/ScreenShare/ScreenShareView",
+          "pages/Advanced/StringRoomId/StringRoomIdView",
+          "pages/Advanced/SetVideoQuality/SetVideoQualityView",
+          "pages/Advanced/SetAudioQuality/SetAudioQualityView",
+          "pages/Advanced/SetRenderParams/SetRenderParamsView",
+          "pages/Advanced/SpeedTest/SpeedTestView",
+          "pages/Advanced/PushCDN/PushCDNEnterView",
+          "pages/Advanced/PushCDN/PushCDNAnchorView",
+          "pages/Advanced/PushCDN/PushCDNAudienceView",
+          "pages/Advanced/CustomCamera/CustomCameraView",
+          "pages/Advanced/SetAudioEffect/SetAudioEffectView",
+          "pages/Advanced/SetBGM/SetBGMView",
+          "pages/Advanced/LocalVideoShare/LocalVideoShareView",
+          "pages/Advanced/LocalRecord/LocalRecordView",
+          "pages/Advanced/JoinMultipleRoom/JoinMultipleRoomView",
+          "pages/Advanced/SEIMessage/SEIMessageView",
+          "pages/Advanced/SwitchRoom/SwitchRoomView",
+          "pages/Advanced/RoomPK/RoomPKView"
+        ],
+      }
+    }
+  ]
+}
