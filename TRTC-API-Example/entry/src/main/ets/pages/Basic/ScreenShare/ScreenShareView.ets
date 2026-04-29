@@ -6,6 +6,7 @@ import {
   TRTCParams,
   TRTCCloudCallback,
   TRTCAppScene,
+  TRTCRoleType,
   TRTCAudioQuality,
   TRTCVideoStreamType,
   TRTCVideoEncParam,
@@ -56,6 +57,10 @@ struct ScreenShareView {
         arr.splice(index, 1);
         this.remoteUsers = arr;
       }
+    },
+    onUserVideoAvailable: (userId: string, available: number) => {
+      // 监听主流视频（录屏使用的是 Big 主流）
+      showToast(userId + (available ? ' 开启视频（录屏）' : ' 关闭视频（录屏）'));
     },
     onUserAudioAvailable: (userId: string, available: number) => {
       showToast(userId + (available ? ' 开启音频' : ' 关闭音频'));
@@ -114,7 +119,7 @@ struct ScreenShareView {
       info.userSig,
       Number(this.roomId),
       '',
-      0
+      TRTCRoleType.TRTCRoleAnchor  // 必须是主播角色才能发布视频流
     );
     BackgroundRunningHelper.start();
     this.trtc.enterRoom(params, TRTCAppScene.TRTCAppSceneLIVE);

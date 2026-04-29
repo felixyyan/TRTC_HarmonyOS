@@ -195,7 +195,7 @@ struct LiveAnchorView {
               }
             }, (user: RemoteUserInfo) => user.userId)
           }
-          .position({ x: 10, y: '70%' })
+          .position({ x: 10, y: '55%' })
         }
       }
       .height('55%')
@@ -213,7 +213,13 @@ struct LiveAnchorView {
           .backgroundColor(this.isVideoMuted ? '#FF4444' : '#444444')
           .onClick(() => {
             this.isVideoMuted = !this.isVideoMuted;
-            this.trtc?.muteLocalVideo(this.isVideoMuted, TRTCVideoStreamType.TRTCVideoStreamTypeBig);
+            if (this.isVideoMuted) {
+              // 关闭视频时，停止本地摄像头采集
+              this.trtc?.stopLocalPreview();
+            } else {
+              // 开启视频时，重新启动本地摄像头采集
+              this.trtc?.startLocalPreview(this.isFrontCamera, this.localViewId);
+            }
           })
 
           Text(this.isVideoMuted ? '视频关' : '视频开')
